@@ -11,9 +11,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-                .anyRequest().authenticated()
-                .and().oauth2Login();
+        http.csrf()
+                .disable().authorizeRequests()
+                .requestMatchers("/test")
+                .permitAll().anyRequest().authenticated().and()
+                .oauth2Login();
 
         return http.build();
     }
