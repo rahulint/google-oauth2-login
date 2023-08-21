@@ -13,9 +13,9 @@ public class SpringSsoGoogleApplication {
         return "Welcome to Google !!";
     }
 
-    @GetMapping("/test")
-    public String welcome2() {
-        return "Welcome to test !!";
+    @GetMapping("/healthcheck")
+    public String healthCheck() {
+        return "Application is running healthy !!";
     }
 
     @GetMapping("/user")

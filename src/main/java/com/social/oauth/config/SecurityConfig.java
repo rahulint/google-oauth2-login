@@ -13,7 +13,7 @@ public class SecurityConfig {
 
         http.csrf()
                 .disable().authorizeRequests()
-                .requestMatchers("/test")
+                .requestMatchers("/healthcheck")
                 .permitAll().anyRequest().authenticated().and()
                 .oauth2Login();
 
